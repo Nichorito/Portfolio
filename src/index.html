@@ -6,6 +6,76 @@
     <title>Nicholas Sheppard</title>
 </head>
 <body>
-    
+    <div class="section1">
+        <header>
+            <a class="darkText" href="">Home</a>
+            <a class="darkText" href="">About</a>
+            <a class="darkText" href="">Projects</a>
+            <a class="darkText" href="">Contact</a>
+        </header>
+        <div class="mainContent">
+            <div class="aboutMe">
+                <p class="darkText" ><span id="intro"><span class="largeText"></span></span></p>
+                <h1 class="darkText largeText"><span id="name"></span></h1><br />
+                <p class="darkText"><span id="paragraph1"></span></p>
+                <p class="darkText"><span id="paragraph2"></span></p>
+                
+                <p class="darkText italic"><span id="learnMore"></span></p>
+            </div>
+            <div class="explodingImages">
+                <img src="Screenshot 2024-11-10 104301.png" alt="Me">
+                <img id="tilt1" src="Screenshot 2024-11-10 104543.png" alt="Me">
+                <img id="tilt2" src="Screenshot 2024-11-10 104651.png" alt="Me">
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var introTyped = new Typed('#intro', {
+        strings: ["Hi, My name is"],
+        typeSpeed: 40,
+        onComplete: (self) => {
+            // Remove cursor after typing "Hi, My name is"
+            self.cursor.remove();
+
+            // Start typing the name after the intro is complete
+            var nameTyped = new Typed('#name', {
+                strings: ["NICHOLAS SHEPPARD"],
+                typeSpeed: 40,
+                onComplete: (self) => {
+                    // Hide cursor after typing the name
+                    self.cursor.remove();
+
+                    var nameTyped = new Typed('#paragraph1', {
+                        strings: ["I’m an aspiring software developer, currently studying computer science at Concordia Univeristy.\n\n"],
+                        typeSpeed: 25,
+                        onComplete: (self) => {
+                            // Hide cursor after typing the name
+                            self.cursor.remove();
+
+                            var nameTyped = new Typed('#paragraph2', {
+                                strings: ["My current interests are mainly web and game development, but I’ve also been learning a bit of Arduino programming in my free time as well."],
+                                typeSpeed: 25,
+                                onComplete: (self) => {
+                                    // Hide cursor after typing the name
+                                    self.cursor.remove();
+
+                                        var nameTyped = new Typed('#learnMore', {
+                                        strings: ["To learn more about me click the photos on the right!"],
+                                        typeSpeed: 25,
+                                        onComplete: (self) => {
+                                        // Hide cursor after typing the name
+                                        self.cursor.remove();
+                                        },
+                                    });
+                                },
+                            });
+                        },
+                    });
+                },
+            });
+        },
+    });
+      </script>
 </body>
-</html>
+</html> 

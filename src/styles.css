@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --light-background: #f9f9f9; /* Define a constant */
+    --dark-text: #1a1a1a;
+    --font-size: 16px;
+    --padding: 10px;
+    box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.darkText {
+    color: var(--dark-text);
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(14px, 2vw, 30px);
+}
+
+.italic {
+    font-style: italic;
+    font-size: 20px;
+    opacity: 75%;
+}
+
+.largeText {
+    line-height: 10px;
+    font-size: 35px;
+}
+
+body{
+    background-color: var(--light-background);
+}
+
+/*./////////// FIRST SECTION (LIGHT) ///////////*/
+
+.section1 {
+    height: 95vh;
+}
+
+header {
+    max-width: 1920px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+a{
+    font-size: 20px !important;
+    font-weight: bold;
+    opacity: 50%;
+    color: inherit;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms, opacity 300ms;
+}
+
+a:hover {
+    text-decoration-color: #1a1a1a;
+    opacity: 1;
+}
+
+.intro{
+    margin-top: 0;
+}
+
+.mainContent {
+    margin: 2% 5%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutMe {
+    max-width: 50%;
+    margin-right: auto;
+}
+
+.explodingImages {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Allows the absolute positioning of #tilt1 */
+}
+
+.explodingImages > img,
+.explodingImages > #tilt1 {
+    max-width: 70%; /* Set the same max-width for both images */
+    width: 100%;    /* Ensure both images take the full width within the defined max-width */
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.75);
+}
+
+.explodingImages > #tilt1 {
+    position: absolute;  /* Allows overlap */
+    top: 0;
+    max-width: 65%;
+    left: 0;
+    transform: translate(150px, 1%) rotate(5deg);
+    z-index: -1; /* Keeps #tilt1 behind the other image */
+}
+
+.explodingImages > #tilt2 {
+    position: absolute;  /* Allows overlap */
+    top: 0;
+    max-width: 60%;
+    left: 0;
+    transform: translate(200px, 5%) rotate(10deg);
+    z-index: -2; /* Keeps #tilt1 behind the other image */
+}

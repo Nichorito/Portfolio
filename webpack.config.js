@@ -20,23 +20,17 @@ module.exports = {
           },
         },
       },
-      // CSS loader and style loader for CSS files
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      // File loader for images (like .png, .jpg, .gif)
       {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]', // Naming convention for images
-              outputPath: 'images/', // Output folder for images
-            },
-          },
-        ],
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
@@ -47,7 +41,11 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'), // Serve files from the dist folder
-    open: true, // Open the browser automatically
+    static: {
+      directory: path.resolve(__dirname, 'dist'), // Change 'contentBase' to 'static'
+    },
+    open: true, // Automatically open the browser
+    hot: true,  // Enable Hot Module Replacement
+    port: 8080, // You can change the port if needed
   },
 };
